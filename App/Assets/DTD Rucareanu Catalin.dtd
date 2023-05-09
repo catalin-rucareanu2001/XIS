@@ -1,0 +1,37 @@
+<!ELEMENT serviciul_112 (apeluri)>
+
+<!ELEMENT apeluri (apel+)>
+
+<!ELEMENT apel (data, ora_apel, dispecer, nume_apelant, prenume_apelant, adresa, descriere, interventie+)>
+
+<!ELEMENT ora_apel (#PCDATA)>
+
+<!ELEMENT data (#PCDATA)>
+
+<!ELEMENT dispecer EMPTY>
+<!ATTLIST dispecer 
+	nume CDATA #REQUIRED
+	prenume CDATA #REQUIRED>
+
+<!ELEMENT nume_apelant (#PCDATA)>
+
+<!ELEMENT prenume_apelant (#PCDATA)>
+
+<!ELEMENT adresa (#PCDATA)>
+
+<!ELEMENT descriere (#PCDATA)>
+
+<!ELEMENT interventie (ora_interventie, durata, echipa, activitate, coordonator)>
+
+<!ELEMENT ora_interventie (#PCDATA)>
+
+<!ELEMENT durata (#PCDATA)>
+
+<!ELEMENT echipa (#PCDATA)>
+
+<!ELEMENT activitate (#PCDATA)>
+
+<!ELEMENT coordonator EMPTY>
+<!ATTLIST coordonator 
+	nume CDATA #REQUIRED
+	prenume CDATA #REQUIRED>

@@ -1,0 +1,36 @@
+<serviciul_112>
+	<apeluri>
+		<apel>
+			<data>2023-03-08</data>
+			<ora_apel>14:25</ora_apel>
+			<dispecer nume="Nicu" prenume="Andreea"/>
+			<nume_apelant>Ion</nume_apelant>
+			<prenume_apelant>Alexandru</prenume_apelant>
+			<adresa>Bd.Iuliu Maniu nr.7</adresa>
+			<descriere>Incendiu la etajul 4</descriere>
+			<interventie >
+				<ora_interventie>14:40</ora_interventie>
+				<durata>30</durata>
+				<echipa>ISU Bucuresti</echipa>
+				<activitate>Stingere incendiu</activitate>
+				<coordonator nume="Priscop" prenume="Vardu"/>
+			</interventie>
+		</apel>
+		<apel>
+			<data>2001-03-27</data>
+			<ora_apel>01:14</ora_apel>
+			<dispecer nume="Rucareanu" prenume="Catalin"/>
+			<nume_apelant>Tabacu</nume_apelant>
+			<prenume_apelant>Daniella</prenume_apelant>
+			<adresa>Bd.1 Decembrie 1918 nr. 26</adresa>
+			<descriere>Nastere in curs</descriere>
+			<interventie>
+				<ora_interventie>01:36</ora_interventie>
+				<durata>45</durata>
+				<echipa>SMURD</echipa>
+				<activitate>Asistenta nastere</activitate>
+				<coordonator nume="Ivan" prenume="Zorovoi"/>
+			</interventie>
+		</apel>
+	</apeluri>
+</serviciul_112>

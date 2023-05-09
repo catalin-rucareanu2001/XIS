@@ -1,0 +1,52 @@
+{
+    "serviciul_112": {
+      "apeluri": {
+        "apel": [
+          {
+            "data": "08.Martie.2023",
+            "ora_apel": "14:25",
+            "dispecer": {
+                "nume" : "Nicu",
+                "prenume" : "Andreea"                
+            },
+            "nume_apelant": "Ion",
+            "prenume_apelant": "Alexandru",
+            "adresa": "Bd.Iuliu Maniu nr.7",
+            "descriere": "Incendiu la etajul 4",
+            "interventie": {
+              "ora_interventie": "14:40",
+              "durata": 30,
+              "echipa": "ISU Bucuresti",
+              "activitate": "Stingere incendiu",
+              "coordonator": {
+                "nume" : "Priscop",
+                "prenume" : "Vardu"
+            }
+            }
+          },
+          {
+            "data": "27.Martie.2023",
+            "ora_apel": "01:14",
+            "dispecer": {
+                "nume" : "Rucareanu",
+                "prenume" : "Catalin"
+            },
+            "nume_apelant": "Tabacu",
+            "prenume_apelant": "Daniella",
+            "adresa": "Bd.1 Decembrie 1918 nr. 26",
+            "descriere": "Nastere in curs",
+            "interventie": {
+              "ora_interventie": "01:36",
+              "durata": 45,
+              "echipa": "SMURD",
+              "activitate": "Asistenta nastere",
+              "coordonator": {
+                "nume" : "Ivan",
+                "prenume" : "Zorovoi"
+            }
+            }
+          }
+        ]
+      }
+    }
+  }

@@ -1,0 +1,103 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="DURATA">
+    <xs:restriction base="xs:unsignedByte">
+        <xs:minInclusive value="30"/>
+        <xs:maxInclusive value="89"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="ORA">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="[01][0-9]:[0-5][0-9](:[0-5][0-9])?"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ECHIPA">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="SMURD" />
+      <xs:enumeration value="Pompieri" />
+      <xs:enumeration value="Politia" />
+      <xs:enumeration value="ISU Bucuresti" />
+    </xs:restriction>
+  </xs:simpleType>
+
+<xs:simpleType name="DATA">
+    <xs:restriction base="xs:date">
+        <xs:minInclusive value="1900-01-01"/>
+        <xs:maxInclusive value="9999-12-31"/>
+        <xs:pattern value="\d{4}-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1])"/>
+    </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name ="BazaPersoana">
+    <xs:attribute name="nume" type="xs:string" use="required" />
+    <xs:attribute name="prenume" type="xs:string" use="required" />
+</xs:complexType>
+
+<xs:complexType name="BazaPersoanaExt">
+    <xs:complexContent>
+        <xs:extension base="BazaPersoana">
+            <xs:attribute name="email" type="xs:string" use="optional" />
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="BazaInterventie">
+    <xs:sequence>
+        <xs:element name="ora_interventie" type="ORA" />
+        <xs:element name="durata" type="DURATA" />
+        <xs:element name="echipa" type="ECHIPA" />
+        <xs:element name="activitate" type="xs:string" />
+
+        <xs:element name="coordonator" type="BazaPersoanaExt" />
+
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BazaInterventieExt">
+    <xs:complexContent>
+        <xs:extension base="BazaInterventie">
+            <xs:sequence>
+                <xs:element name="observatii" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:extension>
+    </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="BazaApel">
+    <xs:sequence>
+        <xs:element name="data" type="DATA" />
+        <xs:element name="ora_apel" type="ORA" />
+
+        <xs:element name="dispecer" type="BazaPersoanaExt" />
+
+        <xs:element name="nume_apelant" type="xs:string" />
+        <xs:element name="prenume_apelant" type="xs:string" />
+        <xs:element name="adresa" type="xs:string" />
+        <xs:element name="descriere" type="xs:string" />
+
+        <xs:element name="interventie" type="BazaInterventieExt" />
+
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BazaApeluri">
+    <xs:sequence>
+
+        <xs:element maxOccurs="unbounded" name="apel" type="BazaApel" />
+
+    </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="BazaServiciul_112">
+    <xs:sequence>
+
+        <xs:element name="apeluri" type="BazaApeluri" />
+
+    </xs:sequence>
+</xs:complexType>
+
+  <xs:element name="serviciul_112" type="BazaServiciul_112" />
+
+</xs:schema>
